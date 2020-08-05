@@ -2,11 +2,10 @@
 
 namespace Biblioteca.Negocio.Entidades
 {
-    public class LectorLibros
+    public class PrestamoLibros
     {
-
-        public int LectorId { get; set; }
-        public Lector Lector { get; set; }
+        public int PrestamoId { get; set; }
+        public Prestamo Prestamo { get; set; }
         public int LibroId { get; set; }
         public Libro Libro { get; set; }
     }
