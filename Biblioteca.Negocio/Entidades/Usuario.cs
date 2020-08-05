@@ -9,21 +9,26 @@ namespace Biblioteca.Negocio.Entidades
 {
     public abstract class Usuario 
     {
+
         public string PrimerNombre { get; set; }
         public string PrimerApellido { get; set; }
         public string Correo { get; set; }
         public string Telefono{ get; set; } 
         
-        protected string Saludo()
+        public virtual string Saludo()
         {
             return $"Bienvenido al sistema {this.PrimerNombre} {this.PrimerApellido}.";
         }
 
-        protected string Despedida()
+        protected string Despedida(string nombre, string apellido)
         {
-            return $"Vuelve pronto {this.PrimerNombre} {this.PrimerApellido}.";
+            return $"Vuelve pronto {nombre} {apellido}.";
         }
 
+        protected string Despedida()
+        {
+            return $"Vuelve pronto te esperamos";
+        }
 
     }
 

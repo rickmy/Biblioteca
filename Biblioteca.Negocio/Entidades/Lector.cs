@@ -6,6 +6,21 @@ namespace Biblioteca.Negocio.Entidades
 {
     public class Lector : Usuario
     {
+        public Lector(string nombre, string apellido, string email, string telefono, string tipoLector, string preferencia)
+        {
+            base.PrimerNombre = nombre;
+            base.PrimerApellido = apellido;
+            base.Correo = email;
+            base.Telefono = telefono;
+            this.TipoLector = tipoLector;
+            this.Preferencias = preferencia;
+        }
+
+        public Lector()
+        {
+
+        }
+
         public int LectorId { get; set; }
         public string TipoLector { get; set; } 
         public string Preferencias { get; set; }
@@ -16,7 +31,7 @@ namespace Biblioteca.Negocio.Entidades
             return $"Hola mis preferencias en libros son: {Preferencias}.";
         }
 
-        public string SaludoLector()
+        public override string Saludo()
         {
             return $"Hola mi nombre es: {base.PrimerNombre} {base.PrimerApellido}";
         }
@@ -25,6 +40,7 @@ namespace Biblioteca.Negocio.Entidades
         {
             return "Me gusta leer mucho";
         }
+
 
     }
 }

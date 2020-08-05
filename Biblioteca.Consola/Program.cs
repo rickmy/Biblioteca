@@ -18,6 +18,7 @@ namespace Biblioteca.Consola
             string prestamo = biblio.Prestamo(lector, libroUno);
 
             Console.WriteLine($"{prestamo} atendido por : {biblio.PrimerNombre} {biblio.PrimerApellido}");
+            Console.WriteLine($"Hay {Bibliotecario.PrestamosHechos} prestamos hechos");
         }
     }
 }
