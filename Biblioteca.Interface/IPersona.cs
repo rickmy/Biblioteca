@@ -6,7 +6,6 @@ namespace Biblioteca.Interface
 {
     public interface IPersona
     {
-        public int Id { get; set; }
 
         public string Saludo();
 

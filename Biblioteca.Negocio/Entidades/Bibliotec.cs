@@ -1,6 +1,7 @@
 ﻿using Biblioteca.Interface;
 using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
 namespace Biblioteca.Negocio.Entidades
@@ -12,8 +13,7 @@ namespace Biblioteca.Negocio.Entidades
         public string Direccion { get; set; }
         public List<Prestamo> Prestamos { get; set; } = new List<Prestamo>();
         public List<Devolucion> Devoluciones { get; set; } = new List<Devolucion>();
-        public List<Usuario> Bibliotecarios { get; set; } = new List<Usuario>();
-        public List<Usuario> Lectores { get; set; } = new List<Usuario>();
+        public List<Bibliotecario> Bibliotecarios { get; set; } = new List<Bibliotecario>();
 
         public string Despedida()
         {
@@ -28,6 +28,11 @@ namespace Biblioteca.Negocio.Entidades
         public string MostrarSaludo(IPersona persona)
         {
             return persona.Saludo();
+        }
+
+        public void AñadirBibliotecario(Bibliotecario bibliotecario)
+        {
+            bibliotecario.BibliotecaId = this.Id;
         }
     }
 }

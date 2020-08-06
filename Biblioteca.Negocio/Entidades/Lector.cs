@@ -2,10 +2,12 @@
 using Biblioteca.Negocio.Entidades;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Biblioteca.Negocio.Entidades
 {
-    public class Lector : Usuario, IPersona
+    public class Lector : Persona, IPersona
     {
         public Lector(string nombre, string apellido, string email, string telefono, string tipoLector, string preferencia)
         {
@@ -21,11 +23,9 @@ namespace Biblioteca.Negocio.Entidades
         {
 
         }
-
         public int LectorId { get; set; }
         public string TipoLector { get; set; } 
         public string Preferencias { get; set; }
-        
 
         public string Descripcion()
         {

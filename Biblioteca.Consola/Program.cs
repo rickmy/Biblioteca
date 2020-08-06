@@ -27,18 +27,21 @@ namespace Biblioteca.Consola
                 Codigo = "Pres-001",
                 Fecha = new DateTime(2020,08,04),
                 Lector = lector,
-                Bibliotecario = biblio
+                BibliotecarioId = biblio.BibliotecarioId,
+                BibliotecId = biblioteca.Id
             };
 
             string avisoPrestamo = prestamo.Prestar(prestamo,libroUno);
 
             Console.WriteLine($"{avisoPrestamo} fue prestado a {lector.PrimerNombre} {lector.PrimerApellido}. atendido por : {biblio.PrimerNombre} {biblio.PrimerApellido}");
             Console.WriteLine($"Hay {Prestamo.PrestamosHechos} prestamos hechos");
+            //Console.WriteLine($"Detalle del prestamo: {prestamo.BibliotecId}");
 
             Devolucion devolucion = new Devolucion {
                 Codigo = "Devo-001",
                 Fecha = new DateTime(2020, 08, 04),
-                Bibliotecario = biblio
+                BibliotecarioId = biblio.BibliotecarioId ,
+                BibliotecId = biblioteca.Id
             };
 
             string avisoDevolucion = devolucion.Devolver(prestamo, libroUno);

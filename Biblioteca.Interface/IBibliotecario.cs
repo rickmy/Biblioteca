@@ -4,7 +4,6 @@ namespace Biblioteca.Interface
 {
     public interface IBibliotecario
     {
-
         public void AñadirPrestamo()
         {
             

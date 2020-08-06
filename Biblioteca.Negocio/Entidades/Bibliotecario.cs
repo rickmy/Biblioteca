@@ -1,13 +1,9 @@
 ﻿using Biblioteca.Interface;
-using Biblioteca.Negocio.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Biblioteca.Negocio.Entidades
 {
-    public class Bibliotecario : Usuario, IBibliotecario, IPersona
+    public class Bibliotecario : Persona, IBibliotecario, IPersona
     {
         public Bibliotecario(string nombre, string apellido, string email, string telefono, string tipoLector, string preferencia)
         {
@@ -20,9 +16,9 @@ namespace Biblioteca.Negocio.Entidades
         {
 
         }
-
-        public new int Id { get; set; }
-
+        public int BibliotecarioId { get; set; }
+        public int BibliotecaId { get; set; }
+        public Bibliotec Bibliotecas { get; set; }
         public void AñadirPrestamo(Prestamo prestamo, Bibliotec biblioteca)
         {
             biblioteca.Prestamos.Add(prestamo);
