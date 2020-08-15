@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Biblioteca.Negocio.Entidades
 {
@@ -32,7 +33,10 @@ namespace Biblioteca.Negocio.Entidades
 
         public void AñadirBibliotecario(Bibliotecario bibliotecario)
         {
-            bibliotecario.BibliotecaId = this.Id;
+            this.Bibliotecarios.Add(bibliotecario);
         }
+
+        
+
     }
 }

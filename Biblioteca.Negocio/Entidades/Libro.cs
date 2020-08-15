@@ -9,7 +9,7 @@ namespace Biblioteca.Negocio.Entidades
         public string Titulo { get; set; }
         public string Editorial { get; set; }
         public string Autor { get; set; } 
-        public List<PrestamoLibros> LectorLibros { get; set; } = new List<PrestamoLibros>();
+        public List<PrestamoLibros> PrestamoLibrosLibros { get; set; } = new List<PrestamoLibros>();
 
         public string Descripcion()
         {
